@@ -113,6 +113,19 @@ map <Down>  :echo "no!"<cr>
 
 " change directory to the currently open file
 nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
+
+" cycle between current and previous buffer
+nnoremap <leader><leader> <c-^>
+
+" move by screen line
+nnoremap j gj
+nnoremap k gk
+
+" remove mapping of F1
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
+
 ""
 "" Status line
 ""
@@ -193,3 +206,5 @@ map <F2> :NERDTreeToggle<CR>
 map \\ <Plug>NERDCommenterToggle<CR>
 imap \\ <Esc><Plug>NERDCommenterToggle i
 
+" ack
+nnoremap <leader>a :Ack
