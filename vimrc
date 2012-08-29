@@ -1,6 +1,8 @@
 "" Inspiration:
 "" https://github.com/mislav/vimfiles
 "" https://github.com/carlhuda/janus
+"" https://github.com/akitaonrails/vimfiles
+
 
 ""
 "" Load plugins
@@ -22,21 +24,42 @@ syntax enable       " Syntax highlighting
 set showcmd     " show partial commands below the status line
 set shell=bash  " avoids munging PATH under zsh
 let g:is_bash=1 " default shell syntax
-set history=200 " remember more Ex commands
+set history=500 " remember more Ex commands
 set scrolloff=3 " have some context around the current line always on screen
 let mapleader=","
+set hidden      " backgrounding buffers
 
 
 ""
 "" Look
 ""
 
+
 if has("gui_running")
+  "tell the term has 256 colors
+  set t_Co=256
+
+  set guioptions=egmrt " Tabs, grey menu items, menu bar, right scrollbar, tearoff menu items 
+  set guioptions-=T    " No toolbar
   colorscheme wombat
+
+  if has("gui_macvim") || has("gui_mac")
+    set guifont=Menlo\ Regular:h12
+    " set guifont=AnonymousPro:h12
+    set linespace=2 " Space between lines
+    set antialias
+    set fuoptions=maxhorz,maxvert " Fullscreen takes up entire screen
+    set columns=115 " width of window in characters
+  end
 else
-  colorscheme solarized
+  set background=dark
+  if $TERM == 'xterm'
+      set term=xterm-256color
+      colorscheme wombat256
+  else
+      colorscheme default
+  endif
 endif
-set background=dark
 
 
 ""
@@ -83,7 +106,14 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
+" disable cursor keys in normal mode
+map <Left>  :echo "no!"<cr>
+map <Right> :echo "no!"<cr>
+map <Up>    :echo "no!"<cr>
+map <Down>  :echo "no!"<cr>
 
+" change directory to the currently open file
+nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
 ""
 "" Status line
 ""
@@ -105,4 +135,59 @@ endif
 
 set backupdir=~/.vim/_backup//    " where to put backup files.
 set directory=~/.vim/_temp//      " where to put swap files.
+
+""
+"" Commands
+""
+
+set wildmode=list:longest   "make cmdline tab completion similar to bash
+set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
+set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
+
+""
+"" Control whitespace preferences based on filetype, uses autocmd
+"" 
+if has("autocmd")
+  " enable file type detection
+  filetype on
+
+  " syntax of these languages is fussy over tabs Vs spaces
+  autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
+  autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
+  " treat .rss files as XML
+  autocmd BufNewFile,BufRead *.rss,*.atom setfiletype xml
+
+  " markdown filetype
+  autocmd BufNewFile,BufRead *.md, *.mkd, *.markdown setfiletype markdown
+  autocmd BufNewFile,BufRead *.md, *.mkd, *.markdown set spell
+
+  " non ruby files related to Ruby
+  autocmd BufNewFile,BufRead Gemfile,Gemfile.lock,Guardfile setfiletype ruby
+
+  autocmd BufNewFile,BufRead Rakefile setfiletype rake
+  autocmd BufNewFile,BufRead Rakefile set syntax=ruby
+
+  autocmd BufNewFile,BufRead *.rake setfiletype rake
+  autocmd BufNewFile,BufRead *.rake set syntax=ruby
+
+  " Python specific settings
+  let NERDTreeIgnore = ['\.pyc$', '\~$', '\.rbc$']
+  autocmd BufNewFile,BufRead *.py set ts=2 sts=2 sw=2 expandtav
+endif
+
+""
+"" Plugins
+""
+
+runtime macros/matchit.vim
+
+" nerdtree
+let g:NERDTreeMouseMode = 2
+let g:NERDTreeWinSize = 25
+map <F2> :NERDTreeToggle<CR>
+
+" nercommenter
+map \\ <Plug>NERDCommenterToggle<CR>
+imap \\ <Esc><Plug>NERDCommenterToggle i
 
