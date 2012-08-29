@@ -34,7 +34,6 @@ set hidden      " backgrounding buffers
 "" Look
 ""
 
-
 if has("gui_running")
   "tell the term has 256 colors
   set t_Co=256
@@ -136,6 +135,7 @@ endif
 set backupdir=~/.vim/_backup//    " where to put backup files.
 set directory=~/.vim/_temp//      " where to put swap files.
 
+
 ""
 "" Commands
 ""
@@ -143,6 +143,7 @@ set directory=~/.vim/_temp//      " where to put swap files.
 set wildmode=list:longest   "make cmdline tab completion similar to bash
 set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
 set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
+
 
 ""
 "" Control whitespace preferences based on filetype, uses autocmd
@@ -175,6 +176,7 @@ if has("autocmd")
   let NERDTreeIgnore = ['\.pyc$', '\~$', '\.rbc$']
   autocmd BufNewFile,BufRead *.py set ts=2 sts=2 sw=2 expandtav
 endif
+
 
 ""
 "" Plugins
