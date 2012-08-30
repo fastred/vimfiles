@@ -210,8 +210,9 @@ let g:NERDTreeMouseMode = 2
 let g:NERDTreeWinSize = 25
 map <F2> :NERDTreeToggle<CR>
 
-" nercommenter
+ "nercommenter
 map \\ <Plug>NERDCommenterToggle<CR>
+map <leader>/ <Plug>NERDCommenterToggle<CR>
 imap \\ <Esc><Plug>NERDCommenterToggle i
 
 " ack
