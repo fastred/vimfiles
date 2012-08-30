@@ -208,7 +208,7 @@ map <F2> :NERDTreeToggle<CR>
 
  "nercommenter
 map \\ <Plug>NERDCommenterToggle<CR>
-map <leader>/ <Plug>NERDCommenterToggle<CR>
+map <D-/> <Plug>NERDCommenterToggle<CR>
 imap \\ <Esc><Plug>NERDCommenterToggle i
 
 " ack
