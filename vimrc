@@ -216,4 +216,4 @@ map <leader>/ <Plug>NERDCommenterToggle<CR>
 imap \\ <Esc><Plug>NERDCommenterToggle i
 
 " ack
-nnoremap <leader>a :Ack
+nnoremap <leader>a :Ack<space>
