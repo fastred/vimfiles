@@ -160,9 +160,10 @@ set directory=~/.vim/_temp//      " where to put swap files.
 "" Commands
 ""
 
-set wildmode=list:longest   "make cmdline tab completion similar to bash
-set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
-set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
+set wildmode=list:longest                    "make cmdline tab completion similar to bash
+set wildmenu                                 "enable ctrl-n and ctrl-p to scroll thru matches
+set wildignore=*.o,*.obj,*~                  "stuff to ignore when tab completing
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " Linux/MacOSX
 
 
 ""
