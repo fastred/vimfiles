@@ -180,10 +180,6 @@ if has("autocmd")
   " treat .rss files as XML
   autocmd BufNewFile,BufRead *.rss,*.atom setfiletype xml
 
-  " markdown filetype
-  autocmd BufNewFile,BufRead *.md, *.mkd, *.markdown setfiletype markdown
-  autocmd BufNewFile,BufRead *.md, *.mkd, *.markdown set spell
-
   " non ruby files related to Ruby
   autocmd BufNewFile,BufRead Gemfile,Gemfile.lock,Guardfile setfiletype ruby
 
