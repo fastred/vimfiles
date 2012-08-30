@@ -126,6 +126,9 @@ inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
+" clear the search buffer when hitting return
+nnoremap <CR> :nohlsearch<cr>
+
 " ,v and ,h to open new splits
 nnoremap <leader>v <C-w>v<C-w>l
 nnoremap <leader>s <C-w>s<C-w>j
