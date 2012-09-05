@@ -28,6 +28,7 @@ set history=500 " remember more Ex commands
 set scrolloff=3 " have some context around the current line always on screen
 let mapleader=","
 set hidden      " backgrounding buffers
+:au FocusLost * silent! wa " save all files after focus is lost
 
 
 ""
