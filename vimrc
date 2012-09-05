@@ -41,7 +41,7 @@ if has("gui_running")
 
   set guioptions=egmrt " Tabs, grey menu items, menu bar, right scrollbar, tearoff menu items 
   set guioptions-=T    " No toolbar
-  colorscheme wombat
+  colorscheme Tomorrow-Night
 
   if has("gui_macvim") || has("gui_mac")
     set guifont=Menlo\ Regular:h12
