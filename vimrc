@@ -27,6 +27,7 @@ let g:is_bash=1 " default shell syntax
 set history=500 " remember more Ex commands
 set scrolloff=3 " have some context around the current line always on screen
 let mapleader=","
+let maplocalleader = ","
 set hidden      " backgrounding buffers
 :au FocusLost * silent! wa " save all files after focus is lost
 
@@ -133,6 +134,9 @@ nnoremap <CR> :nohlsearch<cr>
 " ,v and ,h to open new splits
 nnoremap <leader>v <C-w>v<C-w>l
 nnoremap <leader>s <C-w>s<C-w>j
+
+"
+imap jj <Esc>
 
 ""
 "" Status line
