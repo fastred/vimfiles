@@ -36,6 +36,8 @@ set hidden      " backgrounding buffers
 "" Look
 ""
 
+set colorcolumn=80
+
 if has("gui_running")
   "tell the term has 256 colors
   set t_Co=256
