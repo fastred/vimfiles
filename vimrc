@@ -193,6 +193,9 @@ if has("autocmd")
   " Python specific settings
   let NERDTreeIgnore = ['\.pyc$', '\~$', '\.rbc$']
   autocmd BufNewFile,BufRead *.py set ts=2 sts=2 sw=2 expandtav
+
+  " Java specific settings
+  autocmd BufNewFile,BufRead *.java set ts=4 sts=4 sw=4 expandtab
 endif
 
 
