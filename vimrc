@@ -202,6 +202,12 @@ if has("autocmd")
 
   " Java specific settings
   autocmd BufNewFile,BufRead *.java set ts=4 sts=4 sw=4 expandtab
+
+  " TeX specific settings
+  autocmd BufNewFile,BufRead *.tex colorscheme wombat256
+  autocmd BufNewFile,BufRead *.tex set wrap
+  autocmd BufNewFile,BufRead *.tex setf tex
+  autocmd BufNewFile,BufRead *.tex set colorcolumn=0
 endif
 
 
