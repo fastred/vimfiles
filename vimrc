@@ -208,6 +208,10 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.tex set wrap
   autocmd BufNewFile,BufRead *.tex setf tex
   autocmd BufNewFile,BufRead *.tex set colorcolumn=0
+
+  " Markdown specific settings
+  autocmd BufNewFile,BufRead *.md set wrap
+  autocmd BufNewFile,BufRead *.md set colorcolumn=0
 endif
 
 
