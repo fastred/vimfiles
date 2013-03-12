@@ -247,3 +247,5 @@ let g:ctrlp_map = '<leader>f'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_custom_ignore = '\v[\/](\.git|\.hg|\.svn)$'
 
+" yankring
+let g:yankring_history_file = '.yankring_history'
