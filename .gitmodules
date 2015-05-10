@@ -76,3 +76,6 @@
 [submodule "bundle/yank-ring"]
 	path = bundle/yank-ring
 	url = https://github.com/vim-scripts/YankRing.vim
+[submodule "bundle/base16-colors"]
+	path = bundle/base16-colors
+	url = https://github.com/chriskempson/base16-vim

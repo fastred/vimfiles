@@ -10,6 +10,7 @@
 
 call pathogen#infect()
 filetype plugin indent on
+":Helptags
 
 
 ""
@@ -42,9 +43,10 @@ if has("gui_running")
   "tell the term has 256 colors
   set t_Co=256
 
+  set background=light
   set guioptions=egmrt " Tabs, grey menu items, menu bar, right scrollbar, tearoff menu items 
   set guioptions-=T    " No toolbar
-  colorscheme Tomorrow-Night
+  colorscheme base16-solarized
 
   if has("gui_macvim") || has("gui_mac")
     set guifont=Menlo\ Regular:h12
@@ -55,10 +57,11 @@ if has("gui_running")
     set columns=115 " width of window in characters
   end
 else
-  set background=dark
+  set background=light
+  colorscheme solarized
   if $TERM == 'xterm'
-      set term=xterm-256color
-      colorscheme wombat256
+      let g:solarized_termtrans = 1
+      let g:solarized_termcolors = 256
   else
       colorscheme default
   endif
