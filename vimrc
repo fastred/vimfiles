@@ -115,6 +115,12 @@ map <Right> :echo "no!"<cr>
 map <Up>    :echo "no!"<cr>
 map <Down>  :echo "no!"<cr>
 
+" disable mouse buttons to prevent accidental actions
+noremap <MiddleMouse> <LeftMouse>
+noremap  <2-MiddleMouse> <LeftMouse>
+noremap  <3-MiddleMouse> <LeftMouse>
+noremap  <4-MiddleMouse> <LeftMouse>
+
 " change directory to the currently open file
 nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
 
