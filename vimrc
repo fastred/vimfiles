@@ -50,7 +50,6 @@ if has("gui_running")
 
   if has("gui_macvim") || has("gui_mac")
     set guifont=Menlo\ Regular:h12
-    " set guifont=AnonymousPro:h12
     set linespace=2 " Space between lines
     set antialias
     set fuoptions=maxhorz,maxvert " Fullscreen takes up entire screen
