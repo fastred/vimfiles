@@ -46,7 +46,7 @@ if has("gui_running")
   set background=light
   set guioptions=egmrt " Tabs, grey menu items, menu bar, right scrollbar, tearoff menu items 
   set guioptions-=T    " No toolbar
-  colorscheme base16-solarized
+  colorscheme Tomorrow-Night
 
   if has("gui_macvim") || has("gui_mac")
     set guifont=Menlo\ Regular:h12
@@ -56,14 +56,12 @@ if has("gui_running")
     set columns=115 " width of window in characters
   end
 else
-  set background=light
-  colorscheme solarized
-  if $TERM == 'xterm'
-      set t_Co=256
-      let g:solarized_termtrans = 1
-      let g:solarized_termcolors = 256
+  set background=dark
+  if $TERM == 'xterm' || $TERM == 'xterm-256color'
+    colorscheme Tomorrow-Night
+    set t_Co=256
   else
-      colorscheme default
+    colorscheme default
   endif
 endif
 
