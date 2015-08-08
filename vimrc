@@ -227,6 +227,8 @@ if has("autocmd")
   " Markdown specific settings
   autocmd BufNewFile,BufRead *.md set wrap
   autocmd BufNewFile,BufRead *.md set colorcolumn=0
+  autocmd BufNewFile,BufRead *.markdown set wrap
+  autocmd BufNewFile,BufRead *.markdown set colorcolumn=0
 endif
 
 
