@@ -212,7 +212,6 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.rake set syntax=ruby
 
   " Python specific settings
-  let NERDTreeIgnore = ['\.pyc$', '\~$', '\.rbc$']
   autocmd BufNewFile,BufRead *.py set ts=2 sts=2 sw=2 expandtab
 
   " Java specific settings
@@ -237,11 +236,6 @@ endif
 ""
 
 runtime macros/matchit.vim
-
-" nerdtree
-let g:NERDTreeMouseMode = 2
-let g:NERDTreeWinSize = 25
-map <F2> :NERDTreeToggle<CR>
 
  "nercommenter
 map \\ <Plug>NERDCommenterToggle<CR>
