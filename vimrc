@@ -37,12 +37,11 @@ set hidden      " backgrounding buffers
 "" Look
 ""
 
-set colorcolumn=80
-
 if has("gui_running")
   "tell the term has 256 colors
   set t_Co=256
 
+  set colorcolumn=80
   set background=light
   set guioptions=egmrt " Tabs, grey menu items, menu bar, right scrollbar, tearoff menu items 
   set guioptions-=T    " No toolbar
